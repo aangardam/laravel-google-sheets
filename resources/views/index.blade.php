@@ -158,16 +158,19 @@
                                 icon: 'error',
                                 title: 'Error',
                                 text: response.message
+                            }).then(function() {
+                                location.reload();
                             });
                         }else{
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Berhasil',
                                 text: 'Data berhasil disinkronkan!'
+                            }).then(function() {
+                                location.reload();
                             });
                         }
 
-                        console.log(response);
                     },
                     error: function(xhr, status, error) {
                         var errorMessage = xhr.responseJSON.message || 'Terjadi kesalahan.';
@@ -175,6 +178,8 @@
                             icon: 'error',
                             title: 'Error',
                             text: errorMessage
+                        }).then(function() {
+                            location.reload();
                         });
                     }
                 });
