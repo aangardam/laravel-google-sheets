@@ -8,6 +8,7 @@
 - buat database (sesuaikan dengan yang di .env atau sebaliknya)
 - php artisan migrate
 - php artisan serve
+- maka aplikasi akan berjalan di localhost::8000/sheets
 
 # Link Google Sheet
 Untuk contoh data <a href="https://docs.google.com/spreadsheets/d/1OavABmoxdAwPSueiaM1ub6tZP9PhMmD0XWSveSuWmw8/edit?gid=0#gid=0"><i> Lihat disini</i></a>
