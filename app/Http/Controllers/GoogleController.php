@@ -47,12 +47,20 @@ class GoogleController extends Controller
         $values = Sheets::collection($header, $rows);
         $data = array_values($values->toArray());
         foreach ($data as $key => $value) {
-            Employee::create([
-                'nik' => $value['NIK'],
-                'name' => $value['Name'],
-                'address' => $value['Address'],
-                'gender' => $value['Gender']
-            ]);
+            // Employee::create([
+            //     'nik' => $value['NIK'],
+            //     'name' => $value['Name'],
+            //     'address' => $value['Address'],
+            //     'gender' => $value['Gender']
+            // ]);
+            Employee::updateOrCreate(
+                ['nik' => $value['NIK']],
+                [
+                    'name' => $value['Name'],
+                    'address' => $value['Address'],
+                    'gender' => $value['Gender']
+                ]
+            );
         }
         return response()->json([
             'code' => 201,
